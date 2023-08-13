@@ -1,11 +1,11 @@
 const video = document.getElementById('video')
 
-Promise.all([
+/*Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
     faceapi.nets.faceExpressionNet.loadFromUri('/models')
-]).then(startVideo)
+]).then(startVideo)*/
 
 /*function startVideo() {
     navigator.getUserMedia({ video: {} },
@@ -13,6 +13,12 @@ Promise.all([
         err => console.error(err)
     )
 }*/
+Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri(modelBasePath),
+    faceapi.nets.faceLandmark68Net.loadFromUri(modelBasePath),
+    faceapi.nets.faceRecognitionNet.loadFromUri(modelBasePath),
+    faceapi.nets.faceExpressionNet.loadFromUri(modelBasePath)
+]).then(startVideo);
 function startVideo() {
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(stream => video.srcObject = stream)
