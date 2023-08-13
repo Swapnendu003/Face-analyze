@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Face Expression Recognition</title>
+    <script defer src="node_modules/face-api.js/dist/face-api.min.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(135deg, #7db9e8, #3d92e1);
+            font-family: Arial, sans-serif;
+        }
+        
+        #container {
+            position: relative;
+            text-align: center;
+        }
+        
+        canvas {
+            position: absolute;
+        }
+
+        #message {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 24px;
+            width: 80%;
+        }
+
+        #message p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #buttons {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        #buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <video id="video" width="720" height="560" autoplay muted></video>
+        <canvas id="canvas"></canvas>
+        <div id="message">
+            <p>Relax, and let the analyzer detect your expressions.</p>
+        </div>
+        <div id="buttons">
+            <button id="medAidButton">Go to MedAid Disha</button>
+            <button id="homeButton">Back to Home</button>
+        </div>
+    </div>
+</body>
+</html>
