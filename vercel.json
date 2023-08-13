@@ -1,15 +1,9 @@
 {
     "version": 2,
-    "builds": [
+    "builds": 
       {
         "src": "index.html", 
         "use": "@vercel/static-build"
       }
-    ],
-    "routes": [],
-    "files": [
-      "public",
-      "models"
-    ]
   }
   
